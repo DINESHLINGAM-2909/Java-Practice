@@ -47,11 +47,12 @@ class myName {
                 else
                     System.out.print("  ");
                 Thread.sleep(50);
+            }
                 
             }System.out.println();
         }
     }    
-}
+
 
 class myName2{
     public static void main(String[] args)throws Exception {

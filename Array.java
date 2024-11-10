@@ -461,3 +461,25 @@ class a23{
         System.out.println(Arrays.toString(a));
     }
 }
+//Fizz-Buzz
+class a24{
+    public static void main(String[] args){
+        int a[] = {15,9,25,30,23};
+        String s[] = new String[a.length];
+        int x = 0;
+        for(int i = 0;i<a.length;i++){
+            if(a[i]%3 == 0 && a[i]%5 == 0){
+                s[x++] = "Fizz_Buzz";
+            }else if(a[i]%3 == 0){
+                s[x++]="Fizz";
+            }else if(a[i]%5 == 0){
+                s[x++] ="Buzz";
+            }else{
+                s[x++] = ""+a[i];
+            }
+
+        }
+            System.out.print(Arrays.toString(s));
+        
+    }
+}
