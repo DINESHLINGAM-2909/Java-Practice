@@ -304,3 +304,23 @@ class ex16{
         }
 
     }
+    class WorkAtTech
+    {
+        public static void main (String[] args)
+        {
+            Scanner sc = new Scanner(System.in);
+            int n = sc.nextInt();
+            int a[] = new int[n];
+            for(int i = 0;i<a.length;i++){
+                System.out.println(solve(a[i]));
+            }
+        }
+        public static String solve(int x){
+            if(x%6 == 0){
+                return "True";
+            }
+            else{
+                return "False";
+            }
+        }
+    }

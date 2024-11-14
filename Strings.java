@@ -264,16 +264,16 @@ class s13{
 class s14{
     public static void main(String[] args) {
         String s = "I don't want to live in mansion";
-        String ans = solve(s,'t','a');
+        String ans = solve(s);
         System.out.println(s);
         System.out.println(ans);
     }
     
-    public static String solve(String s, char c,char r){
+    public static String solve(String s){
         char []a = s.toCharArray();
         for(int i= 0;i<a.length;i++){
-            if(a[i] == c){
-                a[i] = r;
+            if(a[i] == 't'){
+                a[i] = 'a';
             }
         }
         return new String(a);
@@ -391,4 +391,89 @@ class s18{
         }
         return ans;
     }
+}
+
+class s19{
+    public static void main(String[] args){
+        String s = "acbAHfBGzF";
+        System.out.println(s);
+        System.out.println(solve(s));
+    }
+    public static String solve(String s){
+        String ans = "";
+        String upc = "";
+        String lpc = "";
+        char a[] = s.toCharArray();
+        Arrays.sort(a);
+        for(int i = 0;i<a.length;i++){
+            if(a[i] >='A' && a[i] <= 'Z'){
+                upc += a[i];
+            }
+            else if(a[i] >= 'a' && a[i] <= 'z'){
+                lpc += a[i];
+            }
+        }
+        char x[] = upc.toCharArray();
+        char y[] = lpc.toCharArray();
+        for(int i = 0,m=0,n=0;i<s.length();i++){
+            if(s.charAt(i) >= 'A' && s.charAt(i) <= 'Z')
+                ans += x[m++];
+            else if(s.charAt(i) >= 'a' && s.charAt(i) <= 'z')
+                ans += y[n++];
+        }
+        return ans;
+       
+        
+    }
+}
+
+class s20{
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 100;
+        for(int i = a;i<=b;i++){
+            if(isPrime(i)){
+                System.out.print(i+" ");
+            }
+        }
+    }
+    public static boolean isPrime(int a){
+        if(a == 0 || a == 1){
+            return false;
+        }
+
+        for(int i = 2;i<a;i++){
+            if(a%i == 0)
+                return false;
+        }
+        return true;
+    }
+}
+
+class s21
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		String a[] = new String[n];
+		for(int i = 0;i<a.length;i++){
+			a[i] = sc.nextLine();
+		}
+		for(int i = 0;i<a.length;i++){
+			System.out.println((isPalindrome(a[i])?"True":"False"));
+		}
+	}
+	public static boolean isPalindrome(String s){
+		String s1 = "";
+		char c[] = s.toCharArray();
+		for(int i = c.length-1;i>=0;i--){
+			s1+=c[i];
+		}
+		
+		if(s.equalsIgnoreCase(s1))
+			return true;
+		else
+			return false;
+	}
 }

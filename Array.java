@@ -483,3 +483,19 @@ class a24{
         
     }
 }
+class a25 {
+	public static int[] getCumulativeSum (int[] arr) {
+		int res[] = new int[arr.length];
+		int sum = 0;
+		for(int i = 0;i<arr.length;i++){
+			sum+=arr[i];
+            res[i] = sum;
+		}
+		return res;
+	}
+    public static void main(String[] args) {
+        int a[] = {1,2,3,4};
+        int ans[] = getCumulativeSum(a);
+        System.out.println(Arrays.toString(ans));
+    }
+}
