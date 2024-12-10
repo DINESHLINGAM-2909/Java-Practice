@@ -499,3 +499,34 @@ class a25 {
         System.out.println(Arrays.toString(ans));
     }
 }
+
+class a26{
+    public static void main(String[] args) {
+        int a[] = {10,20,30,40,50};
+    for(int i = 0;i<2;i++){
+        a[0] = a[a.length-1];
+        for(int j = 1;j<a.length;j++){
+            a[j] = a[j-1]; 
+        }
+        
+    }
+    System.out.println(Arrays.toString(a));
+}
+}
+class p27
+{
+    static Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) 
+    {
+        String s = sc.next();
+        int start = s.charAt(0);
+        int end = s.charAt(s.length()-1);
+        while(start < end)
+        {
+            start = end;
+            start++;
+            end--;
+        }
+        System.out.println(s);
+    }
+}
